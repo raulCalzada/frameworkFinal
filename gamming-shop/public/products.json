@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "category" : "Accion",
+        "name" : "CyberScape 2077",
+        "code" : 987654321,
+        "description" : "CyberScape 2077 es un emocionante juego de mundo abierto ambientado en un futuro distópico. Explora una ciudad cyberpunk llena de tecnología avanzada, pero también de corrupción y peligros. Enfréntate a desafíos únicos mientras descubres los secretos de esta sociedad futurista.",
+        "price" : 60,
+        "quantity" : 5,
+        "imageRoute" : "/images/cyberscape_2077.png"
+    },
+    {
+        "id": 2,
+        "category" : "Aventura",
+        "name" : "Galactic Odyssey",
+        "code" : 987654322,
+        "description" : "Embárcate en un emocionante viaje a través del espacio con Galactic Odyssey. Este juego te llevará a explorar planetas exóticos, descubrir civilizaciones alienígenas y enfrentarte a peligros intergalácticos. Vive una aventura única mientras luchas por desentrañar los misterios del universo.",
+        "price" : 50,
+        "quantity" : 30,
+        "imageRoute" : "/images/galactic_odyssey.png"
+    },
+    {
+        "id": 3,
+        "category" : "Estrategia",
+        "name" : "Legends of Eloria",
+        "code" : 987654323,
+        "description" : "Únete a la epopeya de Legends of Eloria, un juego de rol en línea lleno de magia y misterio. Explora un vasto mundo habitado por criaturas mágicas y personajes legendarios. Participa en emocionantes batallas, completa misiones y forja tu propio destino en esta tierra de fantasía.",
+        "price" : 70,
+        "quantity" : 20,
+        "imageRoute" : "/images/legends_of_eloria.png"
+    },
+    {
+        "id": 4,
+        "category" : "Estrategia",
+        "name" : "Dungeon Quest",
+        "code" : 987654324,
+        "description" : "Embárcate en una emocionante búsqueda de tesoros en Dungeon Quest, un juego de acción y aventuras. Explora peligrosas mazmorras llenas de trampas y enemigos. Derrota a poderosos jefes, encuentra valiosos botines y conviértete en un legendario aventurero.",
+        "price" : 40,
+        "quantity" : 40,
+        "imageRoute" : "/images/dungeon_quest.png"
+    },
+    {
+        "id": 5,
+        "category" : "Aventura",
+        "name" : "Dragon Fury",
+        "code" : 987654325,
+        "description" : "Experimenta la emoción del combate de dragones en Dragon Fury. En este juego, lucharás para convertirte en el rey de los cielos. Domina a feroces dragones, mejora tus habilidades y desafía a otros jugadores en épicas batallas aéreas. ¡Prepárate para una aventura inolvidable!",
+        "price" : 60,
+        "quantity" : 15,
+        "imageRoute" : "/images/dragon_fury.png"
+    },
+    {
+        "id": 6,
+        "category" : "Deportes",
+        "name" : "Football Manager",
+        "code" : 987654326,
+        "description" : "Toma las riendas de un equipo de fútbol y lleva a tus jugadores a la gloria en Football Manager. Este juego de estrategia futbolística te permite gestionar todos los aspectos de un club, desde la formación del equipo hasta las tácticas en el campo. Conviértete en el mejor manager y guía a tu equipo hacia la victoria.",
+        "price" : 55,
+        "quantity" : 35,
+        "imageRoute" : "/images/football_manager.png"
+    }
+]
