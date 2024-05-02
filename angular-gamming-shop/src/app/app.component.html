@@ -1,0 +1,92 @@
+<body>
+  <div class="admin-container">
+    <ng-container *ngIf="admin; else notAdminTemplate">
+      <!-- Código de administrador aquí -->
+      <div>
+        <form (submit)="handleProductSubmit($event)" id="productForm" class="admin-form">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="code">Codigo:</label>
+          <input type="text" id="code" name="code" required />
+          <label for="description">Descripción:</label>
+          <textarea id="description" name="description" required></textarea>
+          <label for="quantity">Stock:</label>
+          <input type="number" id="quantity" name="quantity" required />
+          <label for="category">Categoría:</label>
+          <select id="category" name="category" required>
+            <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+          </select>
+          <label for="price">Precio:</label>
+          <input type="number" id="price" name="price" step="0.01" required />
+          <input type="submit" value="Añadir Producto" />
+        </form>
+        <form (submit)="handleCategorySubmit($event)" id="categoryForm" class="admin-form">
+          <label for="categoryName">Nombre de la categoría a añadir:</label>
+          <input type="text" id="categoryName" name="categoryName" required />
+          <input type="submit" value="Añadir Categoría" />
+        </form>
+        <button (click)="toggleAdmin()" id="admin-button" class="admin-button">Admin</button>
+      </div>
+    </ng-container>
+    <ng-template #notAdminTemplate>
+      <button (click)="toggleAdmin()" id="admin-button" class="admin-button">Admin</button>
+    </ng-template>
+  </div>
+
+  <!-- pagina web -->
+  <div class="header">
+    <img src="assets/images/logo.png" alt="Logo de la tienda de juegos" />
+    <h1 class="title">Gaming Shop</h1>
+  </div>
+  <div class="container">
+    <div class="left">
+      <label for="categories">
+        <h2>Categorias:</h2>
+      </label>
+      <select class="categories" id="categories" (change)="handleCategoryChange($event)">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+      <div *ngFor="let product of productList">
+        <div *ngIf="category === 'Sin categorías' || product.category === category">
+          <div class="product-card">
+            <div class="left-product-card">
+              <h1>{{ product.name }}</h1>
+              <p><strong>Código:</strong> {{ product.code }}</p>
+              <p><strong>Descripción:</strong> {{ product.description }}</p>
+              <p><strong>Stock:</strong> {{ product.quantity }}</p>
+              <p><strong>Categoría:</strong> {{ product.category }}</p>
+              <p><strong>Precio:</strong> €{{ product.price }}</p>
+            </div>
+            <div class="right-product-card">
+              <div class="image-container">
+                <img src="{{ product.imageRoute }}" alt="{{ product.name }}" />
+              </div>
+              <button class="btn btn-primary" (click)="addToCartHandler(+product.code)" class="add-button">Añadir al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="card">
+        <h2>Cesta de la compra</h2>
+        <ng-container *ngIf="cart.length > 0; else emptyCartTemplate">
+          <div *ngFor="let product of cart" class="cart-item">
+            <div class="item-info">
+              <p>{{ product.name }}-{{ product.price }}€</p>
+            </div>
+            <div class="item-actions">
+              <button class="delete-button" (click)="deleteFromCartHandler(+product.code)">eliminar</button>
+
+            </div>
+          </div>
+          <p style="font-size: 60px;">Total: {{ price }}€</p>
+          <button id="payButton" class="pay-button" (click)="pay()">Pagar</button>
+        </ng-container>
+        <ng-template #emptyCartTemplate>
+          <p>Sin productos en la cesta.</p>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</body>
